@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Component } from 'react'
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default class App extends Component {
+  render() {
+    return (
+      <div id='container'>
+        <div id='header'>
+          <img className='logo' src='/logo.jpg' alt='logo' />
+          <div className='logoText'>
+            <span>Job</span> Portal
+          </div>
+          <img className='signinIcon' src='/user.jpg' alt='signin' />
+          <label className='signinText'>Sign In</label>
+        </div>
+        <div id='content'>
+          <div className='text1'>INDIA'S #1 JOB PLATFORM</div>
+          <div className='text2'>Your job search ends here</div>
+          <div className='text3'>Discover career opportunities</div>
+          <div className='searchbar'>
+              <input type='text'  className='searchText' placeholder='Search by skill' /> 
+              <input type='text'  className='searchLocation' placeholder='Job Location' />
+              <button className='searchButton'>Search jobs</button>
+          </div>
+        </div>
+        <div id='footer'>
+          <label className='copyrightText'>Copyright @ 2025. All rights reserved.</label>
+          <img className='socialmediIcon' src='/facebook.jpg' alt='facebook' />
+          <img className='socialmediIcon' src='/twiter.png' alt='twitter' />
+          <img className='socialmediIcon' src='/linkedin.png' alt='linkedin' />
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        </div>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    );
+  }
 }
-
-export default App
