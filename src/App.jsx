@@ -2,16 +2,44 @@ import React, { Component } from 'react'
 import './App.css';
 
 export default class App extends Component {
+  showSignin(){
+    let popup=document.getElementById('popup');
+    popup.style.display='block';
+  }
+  closeSignin(event){
+    if(event.target.id==='popup')
+    {
+      let popup=document.getElementById('popup');
+      popup.style.display='none';
+    }
+  }
   render() {
     return (
       <div id='container'>
+        <div id='popup' onClick={this.closeSignin}>
+          <div id='popupwindow'>
+            <div id='popupheader'>Login</div>
+            <div id='signin'>
+              <label className='usernameLabel'> User Name*</label>
+              <input type='text' id='username' />
+              <label className='passwordLabel'>Password*</label>
+              <input type='password' id='password' />
+              <div className='forgotPassword'>Forgot <label>Password</label></div>
+              <button className='signinbutton'>SignIn</button>
+              <div className='div1'></div>
+              <div className='div2'>
+                Don't have an account? <label>Sign Up Now</label>
+              </div>
+            </div>
+          </div>
+          </div>
         <div id='header'>
           <img className='logo' src='/logo.jpg' alt='logo' />
           <div className='logoText'>
             <span>Job</span> Portal
           </div>
-          <img className='signinIcon' src='/user.jpg' alt='signin' />
-          <label className='signinText'>Sign In</label>
+          <img className='signinIcon' src='/user.jpg' alt='signin'  onClick={this.showSignin}/>
+          <label className='signinText' onClick={this.showSignin}>Sign In</label>
         </div>
         <div id='content'>
           <div className='text1'>INDIA'S #1 JOB PLATFORM</div>
